@@ -1,5 +1,8 @@
 # NodeJs_WebSocket_express-ws
 NodeJs_WebSocket_express-ws  NodeJs实现WebSocket——express-ws接口
+参考链接：https://www.jianshu.com/p/b0700d4162e7
+https://www.npmjs.com/package/express-ws
+https://github.com/HenningM/express-ws
 
 WebSocket是tcp/ip协议之上的一个Socket协议，是为了解决服务器向浏览器主动推送的场景而生，关于该协议的其它内容，本文不做赘述。今天主要讲述一下使用express-ws在NodeJs中如何实现WebSocket 通讯。
 必备知识：
