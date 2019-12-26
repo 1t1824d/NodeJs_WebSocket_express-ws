@@ -6,13 +6,13 @@
 ###### https://github.com/HenningM/express-ws
 
 ###### WebSocket是tcp/ip协议之上的一个Socket协议，是为了解决服务器向浏览器主动推送的场景而生，关于该协议的其它内容，本文不做赘述。今天主要讲述一下使用express-ws在NodeJs中如何实现WebSocket 通讯。
- #### 必备知识：
+ ## 必备知识：
 
     NodeJs 基础
     Express 框架
     H5 WebSocket API
 
-#### 基本使用：
+## 基本使用：
 
 要想使用express-ws，首先要安装express以及express-ws：
 
@@ -58,8 +58,7 @@ var expressWs = require('express-ws');
 var router = express.Router();
 expressWs(router);
 
-router
-    .ws('/user', (ws, req) => {
+router.ws('/user', (ws, req) => {
         ws.on('message', (msg) => {
             console.log("connection 已经连接啦")
             //处理数据开始
@@ -107,7 +106,7 @@ app.use("/ifc", module1);
 app.listen(port);
 console.log("websocket server listen port is" + port)
 
-#### 页面代码
+## 页面代码
 
 将以上的代码通过nodejs启动之后，我们便可以编写前端代码进行测试：
 
