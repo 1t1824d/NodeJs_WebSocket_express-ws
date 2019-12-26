@@ -5,14 +5,14 @@
 ###### https://www.npmjs.com/package/express-ws
 ###### https://github.com/HenningM/express-ws
 
-WebSocket是tcp/ip协议之上的一个Socket协议，是为了解决服务器向浏览器主动推送的场景而生，关于该协议的其它内容，本文不做赘述。今天主要讲述一下使用express-ws在NodeJs中如何实现WebSocket 通讯。
-必备知识：
+###### WebSocket是tcp/ip协议之上的一个Socket协议，是为了解决服务器向浏览器主动推送的场景而生，关于该协议的其它内容，本文不做赘述。今天主要讲述一下使用express-ws在NodeJs中如何实现WebSocket 通讯。
+ ###### 必备知识：
 
     NodeJs 基础
     Express 框架
     H5 WebSocket API
 
-基本使用：
+###### 基本使用：
 
 要想使用express-ws，首先要安装express以及express-ws：
 
@@ -47,7 +47,7 @@ app.ws('/socketTest', function (ws, req){
 ws实例提供了send方法，用于向浏览器socket发送数据。通过监听message事件，我们可以拿到浏览器通过websocket为我们发送的数据。
 
 好了，大功告成。是不是超级简单？
-模块化开发
+###### 模块化开发
 
 一般在大型应用中，我们不会将所有的代码都写在一个文件中，所以express为我们提供了模块化路由。在模块化路由中，express允许我们创建一个迷你app实例，最后将其挂载于我们的主模块实例上即可。如果我们想单独在module1模块上实现websocket，该怎么办呢？之前在npmjs的文档上没有查到方法，经过一番试验后发现，需要分别在主模块的app以及module1模块的子路由中分别进行绑定，才可以开开心心地在module1中使用ws方法：
 
@@ -107,7 +107,7 @@ app.use("/ifc", module1);
 app.listen(port);
 console.log("websocket server listen port is" + port)
 
-页面代码
+###### 页面代码
 
 将以上的代码通过nodejs启动之后，我们便可以编写前端代码进行测试：
 
